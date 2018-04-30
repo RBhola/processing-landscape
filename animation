@@ -1,0 +1,100 @@
+PVector[] clouds;
+
+void setup() {
+  size (720, 450);
+  
+  clouds = new PVector[10];
+  for (int i = 0; i < clouds.length; i++); {
+    float x = random(0, width);
+    float y = random(0, 117);
+    clouds[i] = new PVector(x, y); 
+  }
+}
+    
+void draw () {
+  pushMatrix();
+  popMatrix();
+
+  //float mainBodyY 
+  noStroke();
+  background(#293D48);
+  fill(#D6E3F8);
+  triangle (345, 267, 345, 290, 325, 299);
+  triangle (368, 267, 368, 290, 390, 299); 
+  
+  fill(#E71D36);
+  triangle (356, 212, 343, 247, 370, 247);
+  
+  fill(#CF8043);
+  triangle (357, 308, 343, 289, 369, 289);
+  
+  fill(#F4E54A);
+  triangle (351, 289, 364, 289, 357, 299);
+
+  fill(#F9F4F5);
+  rect (344, 247, 25, 41);
+  
+  fill(#888888);
+  ellipse (377, 377, 33, 33);
+  ellipse (377, 396, 30, 30);
+  ellipse (388, 402, 15, 15);
+  ellipse (386, 430, 45, 45);
+  ellipse (303, 401, 32, 27);
+  ellipse (321, 387, 28, 26);
+  ellipse (425, 431, 17, 17);
+  ellipse (406, 432, 18, 18);
+  ellipse (395, 419, 26, 26);  
+  
+  fill(#ADADAB);
+  ellipse (370, 417, 20, 20);
+  ellipse (346, 410, 50, 50);
+  ellipse (352, 377, 47, 47);
+  ellipse (372, 363, 19, 23);
+  ellipse (344, 347, 35, 35);
+  ellipse (356, 310, 7, 7);
+  ellipse (354, 316, 10, 10);
+  ellipse (352, 323, 17, 15);
+  ellipse (350, 331, 20, 16);
+  ellipse (362, 345, 20, 24);
+  ellipse (371, 347, 5, 5);
+  
+  fill(#C4C4C4);
+  ellipse (277, 457, 135, 125);
+  ellipse (324, 404, 32, 31);
+  ellipse (331, 388, 15, 15);
+  ellipse (362, 456, 76, 70);
+  ellipse (404, 448, 25, 20);
+  ellipse (433, 453, 50, 50);
+  ellipse (466, 427, 56, 53);
+  
+  fill(#EEEEEE);
+  ellipse (245, 439, 46, 46);
+  ellipse (273, 460, 60, 57);
+  
+  fill(#DADADA);
+  ellipse (332, 465, 47, 47);
+  ellipse (484, 470, 90, 80); 
+  
+for (int i = 0; i < clouds.length; i++) {
+    clouds[i].add(1, 0);
+
+    if (clouds[i].x - 75 > width) {
+      clouds[i].x = -75;
+      clouds[i].y = (int) random(50, 117);
+    }
+    noStroke();
+  fill(255);
+  ellipse(clouds[i].x, clouds[i].y, 40, 30);
+  ellipse(clouds[i].x+10, clouds[i].y+15, 40, 30);
+  ellipse(clouds[i].x-10, clouds[i].y+15, 40, 30);
+}
+
+  }
+
+  //to keep multiple objects together
+  //declare variable globablly
+  //intialized in setup
+  //replace numbers with variable
+  
+  //ellipse(0, 0, 0, 0*0.75)
+
