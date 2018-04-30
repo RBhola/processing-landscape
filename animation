@@ -3,8 +3,8 @@ PVector[] clouds;
 void setup() {
   size (720, 450);
   
-  clouds = new PVector[10];
-  for (int i = 0; i < clouds.length; i++); {
+  clouds = new PVector[7];
+  for (int i = 0; i < clouds.length; i++) {
     float x = random(0, width);
     float y = random(0, 117);
     clouds[i] = new PVector(x, y); 
@@ -97,4 +97,3 @@ for (int i = 0; i < clouds.length; i++) {
   //replace numbers with variable
   
   //ellipse(0, 0, 0, 0*0.75)
-
